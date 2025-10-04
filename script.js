@@ -1,6 +1,20 @@
 let gameSeq = [];
 let userSeq = [];
 
+const radios = document.querySelectorAll(`input[name="btn"]`);
+
+for (radio of radios) {
+    radio.addEventListener("change", (event) => {
+        if (event.target.value === "dark") {
+            document.body.classList.add("dark-mode");
+        } else if(event.target.value === "light") {
+            document.body.classList.remove("dark-mode");
+        }
+    });
+}
+
+
+
 let btns = ["yellow","green","red","blue"]
 let started = false;
 let level = 0;
@@ -91,17 +105,45 @@ function chkAns(idx) {
             h3.classList.remove("high");
             h3.innerText = `Highest Score : ${preLevel}`;
         }
-        document.querySelector("body").style.backgroundColor = "#fe2626e8";
+
+
+//checking
+
+        if (document.body.classList.contains("dark-mode")) {
+            document.querySelector("body").style.backgroundColor = "#fe2626e8";
         setTimeout(function () {
-        document.querySelector("body").style.backgroundColor = "#fdffde";
+        document.querySelector("body").style.backgroundColor = "#242424";
         }, 250);
-        if (window.matchMedia("(max-width : 768px").matches) {
-            h2.innerHTML = ` <P style="color: black;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: black;">Tap on screen to continue.</p>`
-            reset();
-        } else {
-            h2.innerHTML = `<P style="color: black;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: black;">Press any Key on keyboard to continue.</p>`
-            reset();
         }
+        else {
+            
+            document.querySelector("body").style.backgroundColor = "#fe2626e8";
+            setTimeout(function () {
+            document.querySelector("body").style.backgroundColor = "#fdffde";
+            }, 250);
+        }
+
+
+        if (document.body.classList.contains("dark-mode")) {
+            
+            if (window.matchMedia("(max-width : 768px").matches) {
+                h2.innerHTML = ` <P style="color: white;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: white;">Tap on screen to continue.</p>`
+                reset();
+            } else {
+                h2.innerHTML = `<P style="color: white;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: white;">Press any Key on keyboard to continue.</p>`
+                reset();
+            }
+        } else {
+            if (window.matchMedia("(max-width : 768px").matches) {
+                h2.innerHTML = ` <P style="color: black;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: black;">Tap on screen to continue.</p>`
+                reset();
+            } else {
+                h2.innerHTML = `<P style="color: black;">GAME OVER!!!</P>  <br><p style="color: red;">Your Score Was ${level}.</p><br><P style="color: black;">Press any Key on keyboard to continue.</p>`
+                reset();
+            }
+        }
+
+
         // console.log(gameSeq);
         //     console.log(userSeq);
     }
