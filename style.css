@@ -92,9 +92,16 @@ div > .btn {
     transform: scale(0.9);
     box-shadow: 0 2px #000;
 }
+#toggle-btns{
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+    gap: 20px;
+}
 
 /* Layout Styling */
-div {
+.btn-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -114,12 +121,14 @@ body.dark-mode h2{
 body.dark-mode h3{
     color:white;
 }
+body.dark-mode #toggle-btns{
+    color:white;
+}
+
+
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
-    body{
-        min-height: 100vh;
-    }
+@media (max-width: 600px) {
     h1 {
         font-size: 2rem;
     }
@@ -127,13 +136,9 @@ body.dark-mode h3{
         font-size: 1rem;
     }
     .btn {
-        -webkit-tap-highlight-color: transparent;
         width: 80px;
         height: 80px;
         margin: 10px;
         border-radius: 15px;
     }
-
 }
-
-
