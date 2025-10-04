@@ -1,0 +1,132 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Exo,'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fdffde;
+    color: #393030;
+    text-align: center;
+    padding: 20px;
+}
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #220404;
+    padding-top: 0%;
+    padding-bottom: 2.5rem;
+    /* text-shadow: 0px 0px 7px #000; */
+}
+.hidden{
+    display: none;
+}
+.high{
+    padding-bottom: 3.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #000000;
+    /* text-shadow: 0px 0px 5px #000; */
+}
+
+/* Buttons Container */
+div > .btn {
+    width: 145px;
+    height: 145px;
+    margin: 15px;
+    border-radius: 100%;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid black;
+}
+/* Button Colors */
+.yellow {
+    background-color: #f5cb5c;
+    box-shadow: 0 5px #c49f3b;
+}
+.green {
+    background-color: #28df99;
+    box-shadow: 0 5px #1f8f63;
+}
+.red {
+    background-color: #e94040;
+    box-shadow: 0 5px #ab1717;
+}
+.blue {
+    background-color: #00bbf9;
+    box-shadow: 0 5px #0083b3;
+}
+.flash{
+    background-color: white;
+    box-shadow: 0 5px rgb(187, 187, 187);
+}
+.user-flash{
+    background-color: rgb(89, 89, 89);
+    box-shadow: 0 5px rgb(32, 32, 32);
+}
+
+/* Button Hover Effect */
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px #000;
+}
+
+/* Layout Styling */
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 500px;
+}
+body.dark-mode{
+    background-color: #242424;
+}
+body.dark-mode h1{
+    color:rgb(255, 232, 131);
+    
+}
+body.dark-mode h2{
+    
+    color:white;
+}
+body.dark-mode h3{
+    color:white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    .btn {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+}
