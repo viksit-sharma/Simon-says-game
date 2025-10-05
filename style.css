@@ -20,12 +20,7 @@ body {
     text-align: center;
     padding: 20px;
 }
-.btn-container {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    grid-template-rows: repeat(2, 150px);
-    gap: 20px;
-}
+
 
 /* Title Styling */
 h1 {
@@ -106,6 +101,12 @@ div > .btn {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 500px;
+}
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
 }
 body.dark-mode{
     background-color: #242424;
